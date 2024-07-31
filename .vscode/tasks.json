@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Serve Storefront",
+      "detail": "Serve the Storefront Development Server",
+      "icon": { "id": "server", "color": "terminal.ansiGreen" },
+      "command": "npm run dev",
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "Run Mock Server",
+      "detail": "Run the mock server for the Storefront. Needs to run in parallel with the Storefront.",
+      "icon": { "id": "settings-gear" },
+      "command": "npm run mock",
+      "group": "build"
+    }
+  ]
+}

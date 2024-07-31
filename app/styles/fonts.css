@@ -1,0 +1,65 @@
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-Thin.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-ExtraLight.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: publicSan;
+  src: url("/assets/fonts/public-sans/PublicSans-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: inter;
+  src: url("/assets/fonts/inter/Inter-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: inter;
+  src: url("/assets/fonts/inter/Inter-Light.ttf");
+  font-weight: 300;
+}
+
+
+:root {
+  --publicSan: publicSan;
+  --inter: inter;
+}

@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: Fake Commerce API
+  description: This is a sample server for a fake online commerce store.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3001
+    description: Local Mock Server
+paths:
+  /products:
+    get:
+      summary: Returns a list of products
+      tags:
+        - products
+      operationId: getProducts
+      responses:
+        '200':
+          description: A JSON array of products
+          content:
+            application/json:
+              schema:
+                type: array
+                x-count: 20
+                items:
+                  $ref: '#/components/schemas/Product'
+  /products/{productId}:
+    get:
+      summary: Returns a product by ID
+      tags:
+        - products
+      operationId: getProductById
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: The ID of the product to return
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A product object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          x-faker: string.uuid
+        name:
+          type: string
+          x-faker: commerce.productName
+        price:
+          $ref: '#/components/schemas/Money'
+        description:
+          type: string
+          x-faker: commerce.productDescription
+        category:
+          type: string
+          x-faker: commerce.productAdjective
+        variants:
+          type: array
+          items:
+            type: string
+            example:
+              - 'Variant 1'
+              - 'Variant 2'
+              - 'Variant 3'
+        mainImage:
+          type: string
+          x-faker: 'image.urlPicsumPhotos({ "width": 800, "height": 800 })'
+        images:
+          type: array
+          x-count: 4
+          items:
+            type: string
+            x-faker: 'image.urlPicsumPhotos({ "width": 800, "height": 800 })'
+    Money:
+      type: object
+      properties:
+        currency:
+          type: string
+          example: 'EUR'
+        value:
+          type: number
+          format: float
+          x-faker: commerce.price

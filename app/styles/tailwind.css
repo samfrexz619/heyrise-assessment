@@ -1,0 +1,23 @@
+@import url('./fonts.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-publicSans bg-body;
+  }
+}
+
+
+.reset {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.reset::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
