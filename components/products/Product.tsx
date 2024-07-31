@@ -7,11 +7,12 @@ interface Props {
   currency: string;
   mainImage: string;
   id: string;
+  category: string;
 }
 
 const Product: React.FC<Props> = (props) => {
-  const { name, value, currency, id, mainImage } = props;
-
+  const { name, value, currency, id, mainImage, category } = props;
+  console.log(category)
   return (
     <NavLink to={`/product-detail/${id}`} className='block'>
       <img src={mainImage} alt={name} className='w-full h-[265px] bg-grey object-cover' />

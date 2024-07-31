@@ -38,8 +38,6 @@ const ProductDetail: React.FC = () => {
     setQty(prevCount => (prevCount > 0 ? prevCount - 1 : 0));
   };
 
-
-  console.log(productDetail?.images)
   return (
     <section className="w-5/6 mx-auto lg:flex gap-x-14 py-20 h-full">
       <div className="grid grid-flow-col auto-cols-[70%] md:auto-cols-auto overflow-x-auto overscroll-x-contain snap-mandatory scroll-px-1 md:grid-cols-2 w-full lg:w-1/2 gap-5 mb-5 lg:mb-0 md:grid-flow-row">

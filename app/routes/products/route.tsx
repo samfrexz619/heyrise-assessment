@@ -46,7 +46,14 @@ const product: React.FC = () => {
 
   const clearSearch = () => {
     setSearch('')
+    setAllProducts(products) //3053272989
   }
+
+  const handleFilter = (item: string) => {
+    const filteredCategory = products.filter(product => product.category === item)
+    setAllProducts(filteredCategory)
+  }
+  console.log(products);
 
   return (
     <section className='w-full'>
@@ -57,7 +64,12 @@ const product: React.FC = () => {
       <section className='w-5/6 mx-auto block lg:grid lg:grid-cols-5 mt-10 gap-x-5'>
         {/* product category */}
         <aside className='col-span-1'>
-          <ProductNav value={search} handleSearch={handleSearch} clearSearch={clearSearch} />
+          <ProductNav
+            value={search}
+            handleSearch={handleSearch}
+            clearSearch={clearSearch}
+            handleFilter={handleFilter}
+          />
         </aside>
 
         {/* product images */}
@@ -83,6 +95,7 @@ const product: React.FC = () => {
                 currency={item.price?.currency!}
                 mainImage={item?.mainImage!}
                 id={item?.id!}
+                category={item?.category!}
               />
             ))}
           </div>

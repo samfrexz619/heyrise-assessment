@@ -7,9 +7,10 @@ interface Props {
   value: string;
   handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   clearSearch: () => void;
+  handleFilter: (item: string) => void;
 }
 
-const ProductNav: React.FC<Props> = ({ value, handleSearch, clearSearch }) => {
+const ProductNav: React.FC<Props> = ({ value, handleSearch, clearSearch, handleFilter }) => {
 
   return (
     <div className='w-full'>
@@ -46,6 +47,7 @@ const ProductNav: React.FC<Props> = ({ value, handleSearch, clearSearch }) => {
             <Checkbox id='cat4' />
             <Label className="text-13" htmlFor='cat4'>Category4</Label>
           </div>
+          <button onClick={() => handleFilter('Tasty')}>Filter by Tasty</button>
         </div>
       </div>
     </div>
